@@ -27,7 +27,7 @@ export default function page() {
 
         <Animate delay={0.2}>
           <div className="max-w-4xl mx-auto px-6 py-20 text-center space-y-6">
-            <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent">
+            <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-b from-[cyan] to-blue-500 bg-clip-text text-transparent">
               More Than Just Code
             </h3>
             <p className="text-gray-400 text-lg leading-relaxed">

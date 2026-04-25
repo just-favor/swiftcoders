@@ -17,10 +17,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 text-white bg-gray-600/30 backdrop-blur-2xl border-b border-white/10">
+      <header className="fixed top-0 left-0 right-0 z-50 text-white bg-gray-600/20 backdrop-blur-2xl border-b border-white/10">
         <Container>
           <div className="flex items-center justify-between py-4">
-            <h1 className="text-4xl font-bold">SwiftCoders</h1>
+            <h1 className="text-4xl font-bold">Swift<span className="bg-gradient-to-br from-[cyan] to-blue-500 bg-clip-text text-transparent">Coders</span></h1>
 
             {/* Desktop nav */}
             <nav className="hidden md:flex gap-4 text-lg font-semibold">

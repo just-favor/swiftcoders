@@ -1,61 +1,76 @@
 "use client";
 
-import Container from '../Container';
-import Animate from '../Animate';
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import Container from "../Container";
 
 const skills = [
-  { name: 'React', level: 95, color: '#61dafb' },
-  { name: 'Next.js', level: 90, color: '#000000' },
-  { name: 'TypeScript', level: 88, color: '#3178c6' },
-  { name: 'Tailwind', level: 92, color: '#38bdf8' },
-  { name: 'Framer Motion', level: 85, color: '#ff3d71' },
+  { name: "React", level: 95, color: "rgba(99,102,241,0.15)", stroke: "#818cf8" },
+  { name: "Next.js", level: 90, color: "rgba(20,184,166,0.12)", stroke: "#2dd4bf" },
+  { name: "TypeScript", level: 88, color: "rgba(168,85,247,0.12)", stroke: "#c084fc" },
+  { name: "Tailwind", level: 92, color: "rgba(56,189,248,0.12)", stroke: "#38bdf8" },
+  { name: "Framer Motion", level: 85, color: "rgba(251,191,36,0.1)", stroke: "#fbbf24" },
 ];
 
 export default function Skills() {
   return (
-    <section className="py-24 bg-gray-900/50">
+    <section className="py-24 bg-[#000000] border-t border-white/[0.06]">
       <Container>
-        <Animate delay={0.1}>
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
-            Tech We Master
-          </h2>
-        </Animate>
-        <Animate delay={0.3}>
-          <p className="text-center text-gray-400 mb-20 max-w-lg mx-auto text-lg leading-relaxed">
-            Cutting-edge stack for modern, performant web applications.
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest mb-3 bg-gradient-to-br from-[cyan] to-blue-500 bg-clip-text text-transparent">
+            Our stack
           </p>
-        </Animate>
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Tech we{" "}
+            <span className="bg-gradient-to-br from-[cyan] to-blue-500 bg-clip-text text-transparent">
+              master
+            </span>
+          </h2>
+          <p className="mt-4 text-slate-400 max-w-lg text-base leading-relaxed">
+            A modern, focused stack — chosen for performance, developer experience, and longevity.
+          </p>
+        </motion.div>
 
-        <div className="space-y-8 max-w-4xl mx-auto">
+        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {skills.map((skill, i) => (
-            <div key={skill.name}>
-              <div className="flex justify-between mb-2 items-center">
-                <span className="font-semibold text-white text-lg">
-                  {skill.name}
-                </span>
-                <span className="text-cyan-400 font-mono text-sm font-bold">
-                  {skill.level}%
-                </span>
-              </div>
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                className="h-3 bg-white/10 rounded-full overflow-hidden border border-white/20"
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.04] p-7 hover:border-indigo-500/40 transition-colors"
+            >
+              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.07),transparent_60%)]" />
+
+              <div
+                className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl"
+                style={{ background: skill.color }}
               >
-                <motion.div 
-                  className="h-full rounded-full flex items-center pl-4"
-                  style={{ 
-                    background: `linear-gradient(90deg, ${skill.color}, ${skill.color}cc)`,
-                    width: `${skill.level}%`
-                  }}
-                  initial={{ width: '0%' }}
-                  animate={{ width: `${skill.level}%` }}
-                  transition={{ duration: 1.5, delay: i * 0.1 }}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={skill.stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+              </div>
+
+              <h3 className="text-white font-semibold text-[17px] mb-3">{skill.name}</h3>
+
+              <div className="h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                <motion.div
+                  className="h-full rounded-full"
+                  style={{ background: skill.stroke }}
+                  initial={{ width: "0%" }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, delay: i * 0.1, ease: "easeOut" }}
                 />
-              </motion.div>
-            </div>
+              </div>
+              <p className="mt-2 text-xs text-slate-500 font-mono">{skill.level}%</p>
+            </motion.div>
           ))}
         </div>
       </Container>
