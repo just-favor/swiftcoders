@@ -46,10 +46,13 @@ function ShootingCanvas() {
       s.lifetime = Math.round((canvas.width * 1.1) / s.speed);
     };
 
+    /* Scale speed by screen width so mobile matches desktop feel */
+    const speedScale = Math.min(1, canvas.width / 1024);
+
     /* Two shooters with offset delays so they don't fire at the same time */
     const shooters: Shooter[] = [
-      { x: 0, y: 0, speed: 2.5, length: 220, progress: 0, lifetime: 0, delay: 0,   color: "#ff6a00" },
-      { x: 0, y: 0, speed: 2,   length: 180, progress: 0, lifetime: 0, delay: 300, color: "#ff3d00" },
+      { x: 0, y: 0, speed: 1.8 * speedScale, length: 220, progress: 0, lifetime: 0, delay: 0,   color: "#ff6a00" },
+      { x: 0, y: 0, speed: 1.4 * speedScale, length: 180, progress: 0, lifetime: 0, delay: 300, color: "#ff3d00" },
     ];
     shooters.forEach(reset);
 
