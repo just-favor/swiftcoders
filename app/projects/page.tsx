@@ -135,6 +135,8 @@ export default function Portfolio() {
 
                 <Link
                   href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-semibold bg-gradient-to-br from-[cyan] to-blue-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
                 >
                   View project →

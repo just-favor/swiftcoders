@@ -174,10 +174,10 @@ export default function Hero() {
 
           <motion.div {...anim(0.28)} className="mt-10 flex justify-center gap-4">
             <Link href="/contact" className="bg-white backdrop-blur-2xl text-black px-7 py-2 rounded-full transition-colors">
-              Connect
+              Connect with us
             </Link>
             <Link href="/projects" className="backdrop-blur-2xl border border-white/20 text-white px-7 py-2 rounded-full hover:bg-white/10 transition-colors">
-              View Work
+              View Our Work
             </Link>
           </motion.div>
 
