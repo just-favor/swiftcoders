@@ -136,7 +136,7 @@ function ShootingCanvas() {
 const anim = (delay = 0) => ({
   initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, ease: "easeOut" as const, delay },
+  transition: { duration: 1.1, ease: "easeOut" as const, delay },
 });
 
 export default function Hero() {

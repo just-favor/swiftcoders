@@ -20,7 +20,7 @@ const projects: Project[] = [
     image: "/foodparley.jpg",
     metrics: ["+45% booking conversion", "2.3x faster load", "Mobile-first UX"],
     tech: ["React", "Tailwind", "Framer Motion", "Node.js"],
-    link: "/projects/foodparley",
+    link: "https://foodparley.vercel.app/",
   },
   {
     title: "Jirova",
@@ -28,7 +28,7 @@ const projects: Project[] = [
     image: "/jirovasite.png",
     metrics: ["Scroll animations", "SEO optimized", "Mobile-first UX"],
     tech: ["Next.js", "Tailwind", "Framer Motion"],
-    link: "/projects/jirova",
+    link: "https://jirova.onrender.com/",
   },
   {
     title: "Sehembz Travels",
@@ -36,7 +36,7 @@ const projects: Project[] = [
     image: "/sehembztravels.png",
     metrics: ["+60% inquiry rate", "Immersive UI", "Fast load times"],
     tech: ["Next.js", "Tailwind", "Vercel"],
-    link: "/projects/sehembztravels",
+    link: "https://sehembztravels.com/",
   },
   {
     title: "E-Commerce Store",
@@ -44,7 +44,7 @@ const projects: Project[] = [
     image: "/e-commerc.png",
     metrics: ["+70% add-to-cart rate", "Secure checkout", "Inventory management"],
     tech: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-    link: "/projects/ecommerce",
+    link: "https://uncle-chuks-site-pms2.vercel.app/",
   },
   {
     title: "Landing Page",
@@ -52,7 +52,15 @@ const projects: Project[] = [
     image: "/landingpage.png",
     metrics: ["+67% lead gen", "Scroll animations", "Email capture"],
     tech: ["Next.js", "GSAP", "Tailwind", "Vercel"],
-    link: "/projects/landing",
+    link: "https://landingpage-umber-mu.vercel.app/",
+  },
+  {
+    title: "Portfolio Website",
+    description: "Personal portfolio site with smooth animations, project showcases, and a clean modern design.",
+    image: "/portfolio.png",
+    metrics: ["Fast load times", "Scroll animations", "Mobile-first UX"],
+    tech: ["Next.js", "Tailwind", "Framer Motion"],
+    link: "https://ogb-portfolio-cnwv.vercel.app",
   },
 ];
 

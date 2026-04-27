@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "../Container";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,12 +15,16 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 text-white bg-gray-600/20 backdrop-blur-2xl border-b border-white/10">
         <Container>
           <div className="flex items-center justify-between py-4">
-            <h1 className="text-4xl font-bold">Swift<span className="bg-gradient-to-br from-[cyan] to-blue-500 bg-clip-text text-transparent">Coders</span></h1>
+            <Link href="/" className="text-2xl md:text-4xl font-bold">Swift<span className="bg-gradient-to-br from-[cyan] to-blue-500 bg-clip-text text-transparent">Coders</span></Link>
 
             {/* Desktop nav */}
             <nav className="hidden md:flex gap-4 text-lg font-semibold">
